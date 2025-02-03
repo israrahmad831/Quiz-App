@@ -1,56 +1,35 @@
-# Quiz Application
-
+Quiz Application
 This is a Java Swing-based quiz application developed using the MVC architecture. The application provides two distinct portals:
 
-- **Teacher Portal**: Allows teachers to log in, create quizzes, and view past quizzes.
-- **Student Portal**: Enables students to log in, attempt available quizzes, and view their scores.
-
-## Features
-
-### Teacher Portal
-
-- Secure login for teachers.
-- Create new quizzes with multiple questions and options.
-- View student responses and scores for completed quizzes.
-
-### Student Portal
-
-- Secure login for students.
-- View available quizzes assigned by teachers.
-- Attempt quizzes and submit answers.
-- View scores and past performance.
-
-## Prerequisites
-
-- **Java 17** or higher
-- **Maven** for build and dependency management
-
-## Getting Started
-
-### Building the Project
-
+Teacher Portal: Allows teachers to log in, create quizzes, and view past quizzes.
+Student Portal: Enables students to log in, attempt available quizzes, and view their scores.
+Features
+Teacher Portal
+Secure login for teachers.
+Create new quizzes with multiple questions and options.
+View student responses and scores for completed quizzes.
+Student Portal
+Secure login for students.
+View available quizzes assigned by teachers.
+Attempt quizzes and submit answers.
+View scores and past performance.
+Prerequisites
+Java 17 or higher
+Maven for build and dependency management
+Getting Started
+Building the Project
 To build the project, run the following command in the project root directory:
 
-```sh
 mvn clean install
-```
-
-### Running the Application
-
+Running the Application
 You can run the application directly using the Java extension pack in Visual Studio Code:
 
-1. Open the `Main.java` file located in the `src/main/java/com/scd/quizapp` directory.
-2. Use the "Run" button provided by the extension to start the application.
-
+Open the Main.java file located in the src/main/java/com/scd/quizapp directory.
+Use the "Run" button provided by the extension to start the application.
 Alternatively, you can use the following command in the terminal:
 
-```sh
 java -cp target/quiz-application-1.0-SNAPSHOT.jar com.scd.quizapp.Main
-```
-
-## Project Structure
-
-```
+Project Structure
 quiz-app
 ├── .gitignore
 ├── pom.xml
@@ -79,23 +58,15 @@ quiz-app
 │   └── test
 │       └── java
 └── target
-```
+References
+This project is referenced and inspired by: https://github.com/zafir100100/QuizApp-Java
 
-## References
-
-This project is referenced and inspired by:
-[https://github.com/zafir100100/QuizApp-Java](https://github.com/zafir100100/QuizApp-Java)
-
-## Future Enhancements
-
-- **Authentication Improvements**: Add password encryption for enhanced security.
-- **Reporting**: Include detailed analytics and progress reports for teachers.
-- **Quiz Timer**: Implement a timer for quizzes.
-- **Database Expansion**: Allow multiple-choice and true/false question types.
-
-## Database Query
-
-```
+Future Enhancements
+Authentication Improvements: Add password encryption for enhanced security.
+Reporting: Include detailed analytics and progress reports for teachers.
+Quiz Timer: Implement a timer for quizzes.
+Database Expansion: Allow multiple-choice and true/false question types.
+Database Query
 CREATE DATABASE if not exists quizapp;
 USE quizapp;
 
@@ -139,4 +110,3 @@ CREATE TABLE student_scores (
     FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
     FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE
 );
-```
